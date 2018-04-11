@@ -7,7 +7,9 @@ from .models import Board
 
 def home(request):
     boards = Board.objects.all()
+    return render(request, 'home.html', {'boards': boards})
     boards_names = list()
+
 
     for board in boards:
         boards_names.append(board.name)
